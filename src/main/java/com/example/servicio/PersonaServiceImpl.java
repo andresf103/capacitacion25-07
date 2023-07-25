@@ -51,7 +51,7 @@ public class PersonaServiceImpl implements PersonaService {
                                 .codigoPostal("3100").build()).build();
 
         Persona persona3 = Persona.builder()
-                .idPersona(3)
+                .idPersona(2)
                 .nombre("Liliana Alcaraz")
                 .direccion(
                         Direccion.builder()
@@ -61,7 +61,7 @@ public class PersonaServiceImpl implements PersonaService {
                                 .codigoPostal("3200").build()).build();
 
         Persona persona4 = Persona.builder()
-                .idPersona(4)
+                .idPersona(3)
                 .nombre("Andrés Arletaz")
                 .direccion(
                         Direccion.builder()
@@ -71,7 +71,7 @@ public class PersonaServiceImpl implements PersonaService {
                                 .codigoPostal("3100").build()).build();
 
         Persona persona5 = Persona.builder()
-                .idPersona(5)
+                .idPersona(4)
                 .nombre("Luciana Gimenez")
                 .direccion(
                         Direccion.builder()
@@ -81,7 +81,7 @@ public class PersonaServiceImpl implements PersonaService {
                                 .codigoPostal("3100").build()).build();
 
         Persona persona6 = Persona.builder()
-                .idPersona(6)
+                .idPersona(5)
                 .nombre("Veronica Pross")
                 .direccion(
                         Direccion.builder()

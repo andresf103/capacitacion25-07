@@ -2,6 +2,11 @@ package com.example.stream;
 
 import com.example.dto.Direccion;
 
+
+/*
+ * Aunque aquí estamos haciendo uso del patron de diseño builder, nos sirve para entender como funciona mas o menos los streams
+ * en su manera de encadenar los distintos métodos
+ * */
 public class EjemploStream {
 
     private Integer numero;

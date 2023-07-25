@@ -19,4 +19,13 @@ public class CompraPersona {
     private Date fechaDelaCompra;
     private BigDecimal monto;
 
+    @Override
+    public String toString() {
+        return "CompraPersona{\n" +
+                "\nnombre='" + nombre + '\'' +
+                "\n, ciudad='" + ciudad + '\'' +
+                "\n, fechaDelaCompra=" + fechaDelaCompra +
+                "\n, monto=" + monto +
+                "\n}";
+    }
 }
