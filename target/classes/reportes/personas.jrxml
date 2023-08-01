@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="personas" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="TITULO_REPORTE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORTE_ENCABEZADO" class="java.lang.String"/>
+	<parameter name="SUBREPORTE_PIE_DE_PAGINA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idPersona" class="java.lang.Integer"/>
+	<field name="fechaDeNacimiento" class="java.util.Date"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="direccionId" class="java.lang.Integer"/>
+	<field name="calleYNumero" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="codigoPostal" class="java.lang.String"/>
+	<group name="GroupCiudad">
+		<groupExpression><![CDATA[$F{ciudad}]]></groupExpression>
+		<groupHeader>
+			<band height="15">
+				<textField>
+					<reportElement x="0" y="0" width="239" height="15" uuid="4c4960aa-e04b-46bd-81af-f7fe4bff6a9e">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40852d84-3b59-45bb-97ce-bbba1569ce25"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["Ciudad: "+ $F{ciudad}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="76" uuid="56808445-0122-4f70-bc0d-1d83781276a9"/>
+				<subreportParameter name="TITULO_REPORTE">
+					<subreportParameterExpression><![CDATA[$P{TITULO_REPORTE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORTE_ENCABEZADO}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="16" uuid="fdc14ca7-0c33-46a3-9a78-5358191d4a3b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b5a7d24-81d3-4f58-9cf6-ed547ebaa165"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[idPersona]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="92" height="16" uuid="43b96aa2-8c69-4619-b87f-a4206453a245">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="150f8efd-de92-46e8-a705-3a4d392b0958"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha Nac]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="92" height="16" uuid="b20e0a25-9026-49bb-a132-fbd2d9d7ce98">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd16e3a0-0366-4c39-91db-49d5cb5576be"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="92" height="16" uuid="97e27dcc-e570-40ff-995b-4735a655d6f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2500e4a0-d997-4baf-a1dc-86ebe2629de4"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[id Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="92" height="16" uuid="6016bc57-fa21-4487-8fee-13cf705a32ce">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="15ae3e8c-50e7-4f56-95b6-44bed1b2fabf"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Calle Y Numero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="92" height="16" uuid="8ebe3808-f8e7-42d3-8715-22cb8fb4f4a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f4e73ae-a390-48a9-9e77-ad762403c6df"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="95" height="15" uuid="6fcfa1a2-78b5-437b-8aad-15f886ade34f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b5a7d24-81d3-4f58-9cf6-ed547ebaa165"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{idPersona}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="95" y="0" width="92" height="15" uuid="9834725a-7ada-44d1-8fb0-6914b2f512e9">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="150f8efd-de92-46e8-a705-3a4d392b0958"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{fechaDeNacimiento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="187" y="0" width="92" height="15" uuid="7f63868f-2af6-4618-8214-3afaf7360039">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dd16e3a0-0366-4c39-91db-49d5cb5576be"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="279" y="0" width="92" height="15" uuid="60267c94-5e5a-435a-8744-1c33d3f2b136">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2500e4a0-d997-4baf-a1dc-86ebe2629de4"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{direccionId}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="371" y="0" width="92" height="15" uuid="cf69aa91-35dd-4388-8355-2663b54890c8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="15ae3e8c-50e7-4f56-95b6-44bed1b2fabf"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{calleYNumero}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="463" y="0" width="92" height="15" uuid="d7aa18b1-7da8-42d9-8139-85ff33d84ff9">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7f4e73ae-a390-48a9-9e77-ad762403c6df"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{codigoPostal}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fa45a887-615a-4d84-a2d7-8a2219671b3c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="8" width="555" height="25" uuid="166405e2-3173-4745-a802-182d8cfa82e9"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORTE_PIE_DE_PAGINA}]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="33" width="555" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="f1c7e728-60aa-4f09-90d2-30f1ae03c715"/>
+				<textField evaluationTime="Report">
+					<reportElement x="510" y="1" width="40" height="20" forecolor="#736343" uuid="553a3e4c-8b8b-497f-84d2-e1d7e8d6971a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="430" y="1" width="80" height="20" forecolor="#736343" uuid="5755b43b-6565-4cd8-b991-a0eb0114aa74"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="10" y="1" width="197" height="20" forecolor="#736343" uuid="e594818a-a6e7-4a45-a1fe-a3b5fed218af"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[DATEFORMAT(TODAY(),"dd/MM/yyy HH:mm")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

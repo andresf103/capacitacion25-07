@@ -52,11 +52,13 @@ public class App
 
         // Uno con
 
+        List<PersonaDireccionReporte> personaDireccionReporteList = personaService.obtenerTodasLasPersonas()
+                .stream()
+                .map(PersonaDireccionReporte::new).sorted(Comparator.comparing(PersonaDireccionReporte::getCiudad))
+                .collect(Collectors.toList());
+
         try {
-            servicioDeImpresion.mostrarImpresionEnPantalla(personaService.obtenerTodasLasPersonas()
-                    .stream()
-                    .map(PersonaDireccionReporte::new)
-                    .collect(Collectors.toList()));
+            servicioDeImpresion.mostrarImpresionEnPantalla(personaDireccionReporteList);
         } catch (JRException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

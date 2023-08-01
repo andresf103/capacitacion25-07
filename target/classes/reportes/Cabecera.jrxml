@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cabecera" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="6b728252-1af1-4de7-8757-ddb2d78f65e6">
+	<style name="Title" fontName="Times New Roman" fontSize="32" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<parameter name="TITULO_REPORTE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="76" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="120" height="76" uuid="2163fdfb-70ca-41c4-9f56-512148cc502a"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="SubTitle" x="130" y="44" width="420" height="22" uuid="f8f40acd-d83b-4e2a-8af6-70e4d93d26bf"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Subtitulo con texto estatico]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Title" x="130" y="0" width="420" height="40" uuid="8de47208-fd56-47e7-8c54-377fa456c318"/>
+				<textFieldExpression><![CDATA[$P{TITULO_REPORTE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
