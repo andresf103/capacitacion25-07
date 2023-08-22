@@ -4,6 +4,7 @@ import com.example.dto.Compra;
 import com.example.dto.Persona;
 import com.example.dto.CompraPersona;
 import com.example.dto.PersonaDireccionReporte;
+import com.example.repositorio.PersonaRepositorio;
 import com.example.servicio.*;
 import com.example.stream.EjemploStream;
 import net.sf.jasperreports.engine.JRException;
@@ -20,7 +21,7 @@ public class App
     public static void main( String[] args )
     {
 
-        PersonaService personaService = new PersonaServiceImpl();
+        PersonaService personaService = new PersonaServiceImpl(new PersonaRepositorio());
         CompraService compraService = new CompraServiceImpl(personaService);
         ServicioDeImpresion servicioDeImpresion = new ServicioDeImpresion();
 
