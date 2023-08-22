@@ -58,10 +58,9 @@ public class App
                 .collect(Collectors.toList());
 
         try {
-            servicioDeImpresion.mostrarImpresionEnPantalla(personaDireccionReporteList);
-        } catch (JRException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+            servicioDeImpresion.mostrarImpresionEnPantalla(personaDireccionReporteList, "personas.jasper");
+//            servicioDeImpresion.mostrarImpresionEnPantalla(comprasPersonasList, "compras.jasper");
+        } catch (JRException | IOException e) {
             throw new RuntimeException(e);
         }
     }

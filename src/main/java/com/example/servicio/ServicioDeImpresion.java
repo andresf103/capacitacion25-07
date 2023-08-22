@@ -26,8 +26,9 @@ public class ServicioDeImpresion {
 
     final String PIE_DE_PAGINA = "/reportes/PiePagina.jasper";
     final String CABECERA = "/reportes/Cabecera.jasper";
+    final String URL_BASE = "reportes/";
 
-    public JasperPrint obtenerJasperPrint(Collection<?> coleccion) throws JRException, IOException {
+    public JasperPrint obtenerJasperPrint(Collection<?> coleccion, String nombre) throws JRException, IOException {
         Map<String, Object> parametros = new HashMap<>();
         parametros.put("TITULO_REPORTE", "el titulo del parametro");
 
@@ -52,19 +53,19 @@ public class ServicioDeImpresion {
         }
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(coleccion);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(ServicioDeImpresion.class.getClassLoader().getResourceAsStream("reportes/personas.jasper"), parametros, dataSource);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(ServicioDeImpresion.class.getClassLoader().getResourceAsStream(URL_BASE + nombre), parametros, dataSource);
         return jasperPrint;
     }
 
-    public void mostrarImpresionEnPantalla(Collection<?> coleccion) throws JRException, IOException {
-        JasperPrint jasperPrint = obtenerJasperPrint(coleccion);
+    public void mostrarImpresionEnPantalla(Collection<?> coleccion, String nombre) throws JRException, IOException {
+        JasperPrint jasperPrint = obtenerJasperPrint(coleccion, nombre);
         JasperViewer vista = new JasperViewer(jasperPrint, Boolean.FALSE);
         vista.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         vista.setVisible(Boolean.TRUE);
     }
 
     private byte[] exportarPdf(Collection<?> coleccion) throws JRException, IOException {
-        JasperPrint jasperPrint = obtenerJasperPrint(coleccion);
+        JasperPrint jasperPrint = obtenerJasperPrint(coleccion,"personas.jasper");
 
         JRPdfExporter exporter = new JRPdfExporter();
 
